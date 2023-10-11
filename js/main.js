@@ -47,6 +47,7 @@ translateBtn.addEventListener('click', () => {
 
     if(!text) return;
     toText.setAttribute("placeholder", "Translating...");
+    translateBtn.innerText = "Translating...";
 
     let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
 
@@ -57,6 +58,7 @@ translateBtn.addEventListener('click', () => {
         console.log(data);
         toText.value = data.responseData.translatedText;
         toText.setAttribute("placeholder", "Translation");
+        translateBtn.innerText = "Translate Text";
     }))
 });
 
